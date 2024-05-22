@@ -1,114 +1,193 @@
-@import './mixins.scss';
+@import "./mixins.scss";
 
 //HOMECONTAINER
-.homeContainer{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    height: vh;
-    width: 100%;
-    font-family: "Open Sans";
+.homeContainer {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  height: vh;
+  width: 100%;
+  font-family: "Open Sans";
+  color: $text-color;
+  font-weight: 200;
 }
 
-.topIcons{
+.topIcons {
+  .principalIcon {
+    height: 32px;
+    width: 32px;
+  }
 
-    .principalIcon{
-        height: 32px;
-        width: 32px;
-    }
-    
-    .iconAtras{
-        height: 24px;
-        width: 24px;
-    }
-    
-    .iconCerrar{
-        height: 18px;
-        width: 18px;
-    }
-}
-
-
-
-.iconDocument{
-    height: 40px;
-    width: 40px;
-    // fill: $icon-color;
-}
-
-.textID{
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 600;
-    width: 400px;
+  .iconAtras {
     height: 24px;
+    width: 24px;
+  }
+
+  .iconCerrar {
+    height: 18px;
+    width: 18px;
+  }
 }
 
-.alertDocument{
-    height: 20px;
-    width: 295px;
-    border-radius: 4px;
-    background-color: $backgorund-alert-color;
-
-    .textAlertDocument{
-        width: 266px;
-        height: 17px;
-        font-size: 12px;
-        line-height: 13px;
-        color: $basic-color;
-        font-weight: 600;
-        padding-top: 4px;
-    }
-    
+.iconDocument {
+  height: 40px;
+  width: 40px;
+  // fill: $icon-color;
 }
 
+.textID {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  width: 400px;
+  height: 24px;
+}
 
-.textDocTitular{
+.alertDocument {
+  height: 20px;
+  width: 295px;
+  border-radius: 4px;
+  background-color: $backgorund-alert-color;
+
+  .textAlertDocument {
+    width: 266px;
+    height: 17px;
+    font-size: 12px;
+    line-height: 13px;
+    color: $basic-color;
     font-weight: 600;
+    padding-top: 4px;
+  }
+}
+
+.textDocTitular {
+  font-weight: 600;
 }
 
 //INPUTS
-.iconAdopto{
-    width: 80px;
-    height: 80px;
+.iconAdopto {
+  width: 80px;
+  height: 80px;
 }
 
-.borderRadioDoc{
-    height: 150px;
-    width: 200px;
+.borderRadioDoc {
+  height: 150px;
+  width: 200px;
+  border: 1px solid $border-box-color;
+  border-radius: 4px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  display: inline-block;
+  margin: 5px;
+  display: inline-block;
+}
+
+.radioLabel {
+  display: inline-block;
+  cursor: pointer;
+
+  img {
+  }
+
+  p {
+    margin-top: 5px;
+    font-weight: normal;
+  }
+
+  &:hover {
+    img,
+    p {
+      border-color: $icon-color;
+      font-weight: 600;
+    }
+  }
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+ 
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: $icon-color;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.principalContainerRadioID{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.containerRadioID{
+    border: 1px solid $border-box-color;
+    height: 47px;
+    width: 112px;
+    border-radius: 4px;
+}
+//NUMERO DE DOCUMENTO
+
+.textNumDoc{
+    font-weight: 600;
+}
+
+.buttonAddDoc{
+    color: $basic-color;
+    background-color: $button-color;
+    border: none;
+    height: 48px;
+    width: 347px;
+    border-radius: 24.5px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.inputNumID{
     border: 1px solid $border-box-color;
     border-radius: 4px;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    display: inline-block;
-    margin: 5px;
-    display:inline-block;
+    height: 48px;
+    width: 346px;
 }
 
-.radioLabel{
-    display: inline-block;
-    cursor: pointer;
-
-    img{
-
-    }
-   
-
-    p{
-        margin-top: 5px;
-        font-weight: normal;
-
-    }
-
-    &:hover{
-        img, p {
-            border-color: $icon-color;
-            font-weight: 600;
-        }
-    }
-
-}
-
-
-
-
+//BOTON

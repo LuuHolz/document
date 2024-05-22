@@ -3,6 +3,7 @@ import Document from "../assets/id-card-svgrepo-com.svg";
 import Cerrar from "../assets/cerrar.png";
 import Atras from "../assets/atras.png";
 import RadioAdopto from "../components/radioAdopto";
+import RadioID from "../components/radioTipoID";
 
 const Home = () => {
   return (
@@ -34,13 +35,15 @@ const Home = () => {
         <p className="textDocTitular">Titutlar del documento</p>
       </div>
 
-      <RadioAdopto/>
+      <RadioAdopto />
 
       <p>Tipo de documento</p>
-      <p>Indica el numero del documento</p>
-      <input type="number" />
-      <button>Añadir documento</button>
+      <RadioID />
 
+      <p className="textNumDoc">Indica el numero del documento</p>
+      <input type="number" className="inputNumID"/>
+
+      <button className="buttonAddDoc">Añadir documento</button>
     </div>
   );
 };
