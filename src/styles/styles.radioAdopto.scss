@@ -1,0 +1,38 @@
+//INPUTS
+.iconAdopto {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .borderRadioDoc {
+    height: 150px;
+    width: 200px;
+    border: 1px solid $border-box-color;
+    border-radius: 4px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    display: inline-block;
+    margin: 5px;
+    display: inline-block;
+  }
+  
+  .radioLabel {
+    display: inline-block;
+    cursor: pointer;
+  
+    img {
+    }
+  
+    p {
+      margin-top: 5px;
+      font-weight: normal;
+    }
+  
+    &:hover {
+      img,
+      p {
+        border-color: $icon-color;
+        font-weight: 600;
+      }
+    }
+  }

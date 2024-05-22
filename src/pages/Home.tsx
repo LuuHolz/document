@@ -1,7 +1,7 @@
-import Pets from "../assets/mascotas.png";
-import Document from "../assets/id-card-svgrepo-com.svg";
-import Cerrar from "../assets/cerrar.png";
-import Atras from "../assets/atras.png";
+import Pets from "../assets/pet-round.svg";
+import Document from "../assets/id-card.svg";
+import Cerrar from "../assets/close.svg";
+import Atras from "../assets/back.svg";
 import RadioAdopto from "../components/radioAdopto";
 import RadioID from "../components/radioTipoID";
 

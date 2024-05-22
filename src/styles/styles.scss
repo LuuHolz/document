@@ -24,10 +24,13 @@
   }
 
   .iconCerrar {
-    height: 18px;
-    width: 18px;
+    height: 24px;
+    width: 24px;
   }
+
 }
+
+
 
 .iconDocument {
   height: 40px;
@@ -64,108 +67,9 @@
   font-weight: 600;
 }
 
-//INPUTS
-.iconAdopto {
-  width: 80px;
-  height: 80px;
-}
 
-.borderRadioDoc {
-  height: 150px;
-  width: 200px;
-  border: 1px solid $border-box-color;
-  border-radius: 4px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  display: inline-block;
-  margin: 5px;
-  display: inline-block;
-}
 
-.radioLabel {
-  display: inline-block;
-  cursor: pointer;
 
-  img {
-  }
-
-  p {
-    margin-top: 5px;
-    font-weight: normal;
-  }
-
-  &:hover {
-    img,
-    p {
-      border-color: $icon-color;
-      font-weight: 600;
-    }
-  }
-}
-
-[type="radio"]:checked,
-[type="radio"]:not(:checked) {
-  position: absolute;
-  left: -9999px;
-}
-[type="radio"]:checked + label,
-[type="radio"]:not(:checked) + label {
-  position: relative;
-  padding-left: 28px;
-  cursor: pointer;
-  line-height: 20px;
-  display: inline-block;
- 
-}
-[type="radio"]:checked + label:before,
-[type="radio"]:not(:checked) + label:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 18px;
-  height: 18px;
-  border: 1px solid #ddd;
-  border-radius: 100%;
-  background: #fff;
-}
-[type="radio"]:checked + label:after,
-[type="radio"]:not(:checked) + label:after {
-  content: "";
-  width: 12px;
-  height: 12px;
-  background: $icon-color;
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  border-radius: 100%;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-[type="radio"]:not(:checked) + label:after {
-  opacity: 0;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-}
-[type="radio"]:checked + label:after {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-
-.principalContainerRadioID{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-}
-
-.containerRadioID{
-    border: 1px solid $border-box-color;
-    height: 47px;
-    width: 112px;
-    border-radius: 4px;
-}
 //NUMERO DE DOCUMENTO
 
 .textNumDoc{
@@ -191,3 +95,4 @@
 }
 
 //BOTON
+
