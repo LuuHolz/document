@@ -1,38 +1,48 @@
-import Pets from '../assets/mascotas.png';
-import Document from '../assets/identificacionpng.png';
-import AdoptoParaMi from '../assets/dueno-de-una-mascota (1).png';
-import AdoptoParaOtro from '../assets/dueno-de-una-mascota.png'
-import Cerrar from '../assets/cerrar.png';
-import Atras from '../assets/atras.png'
-
+import Pets from "../assets/mascotas.png";
+import Document from "../assets/id-card-svgrepo-com.svg";
+import Cerrar from "../assets/cerrar.png";
+import Atras from "../assets/atras.png";
+import RadioAdopto from "../components/radioAdopto";
 
 const Home = () => {
   return (
-    <div className='homeContainer'>
-        <div>
-            <img src={Atras} alt="" />
-            <img src={Pets} alt="pet" className='principalIcon'/>
-            <img src={Cerrar} alt="cerrar" className='iconCerrar'/>
-        </div>
-        <div>
-            Documento del responsable de la adopcion
-        </div>
-        <div>
-            DEBES AÑADIR UN DOCUMENTO
-        </div>
-        <img src={Document} alt="document" className='document'/>
-        <div>
-            <p>
-                Para iniciar la pre-adopcion, es necesario tener registrado un documento de identificacion.
-            </p>
-        </div>
-        <div>
-            <p>Titutlar del documento</p>
-        </div>
-        
+    <div className="homeContainer">
+      <div className="topIcons">
+        <img src={Atras} alt="atras" className="iconAtras" />
+        <img src={Pets} alt="pet" className="principalIcon" />
+        <img src={Cerrar} alt="cerrar" className="iconCerrar" />
+      </div>
+
+      <div className="textID">Documento del responsable de la adopcion</div>
+
+      <div className="alertDocument">
+        <p className="textAlertDocument">DEBES AÑADIR UN DOCUMENTO</p>
+      </div>
+
+      <div>
+        <img src={Document} alt="document" className="iconDocument" />
+      </div>
+
+      <div>
+        <p>
+          Para iniciar la pre-adopcion, es necesario{" "}
+          <strong>tener registrado un documento de identificacion.</strong>
+        </p>
+      </div>
+
+      <div>
+        <p className="textDocTitular">Titutlar del documento</p>
+      </div>
+
+      <RadioAdopto/>
+
+      <p>Tipo de documento</p>
+      <p>Indica el numero del documento</p>
+      <input type="number" />
+      <button>Añadir documento</button>
 
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

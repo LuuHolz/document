@@ -7,19 +7,108 @@
     margin: 0;
     height: vh;
     width: 100%;
+    font-family: "Open Sans";
 }
 
-.principalIcon{
-    height: 32px;
-    width: 32px;
+.topIcons{
+
+    .principalIcon{
+        height: 32px;
+        width: 32px;
+    }
+    
+    .iconAtras{
+        height: 24px;
+        width: 24px;
+    }
+    
+    .iconCerrar{
+        height: 18px;
+        width: 18px;
+    }
 }
 
-.iconCerrar{
+
+
+.iconDocument{
+    height: 40px;
+    width: 40px;
+    // fill: $icon-color;
+}
+
+.textID{
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    width: 400px;
     height: 24px;
-    width: 24px;
 }
 
-.document{
-    height: 24px;
-    width: 24px;
+.alertDocument{
+    height: 20px;
+    width: 295px;
+    border-radius: 4px;
+    background-color: $backgorund-alert-color;
+
+    .textAlertDocument{
+        width: 266px;
+        height: 17px;
+        font-size: 12px;
+        line-height: 13px;
+        color: $basic-color;
+        font-weight: 600;
+        padding-top: 4px;
+    }
+    
 }
+
+
+.textDocTitular{
+    font-weight: 600;
+}
+
+//INPUTS
+.iconAdopto{
+    width: 80px;
+    height: 80px;
+}
+
+.borderRadioDoc{
+    height: 150px;
+    width: 200px;
+    border: 1px solid $border-box-color;
+    border-radius: 4px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    display: inline-block;
+    margin: 5px;
+    display:inline-block;
+}
+
+.radioLabel{
+    display: inline-block;
+    cursor: pointer;
+
+    img{
+
+    }
+   
+
+    p{
+        margin-top: 5px;
+        font-weight: normal;
+
+    }
+
+    &:hover{
+        img, p {
+            border-color: $icon-color;
+            font-weight: 600;
+        }
+    }
+
+}
+
+
+
+
