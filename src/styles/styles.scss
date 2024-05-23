@@ -4,18 +4,30 @@
 .homeContainer {
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
+  margin: auto;
   height: vh;
-  width: 100%;
+  width: 50%;
   font-family: "Open Sans";
   color: $text-color;
   font-weight: 200;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
+//ICONOS SUPERIORES
+
 .topIcons {
+  height: 24px;
+  width: 353px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   .principalIcon {
-    height: 32px;
-    width: 32px;
+    height: 38px;
+    width: 38px;
   }
 
   .iconAtras {
@@ -27,72 +39,107 @@
     height: 24px;
     width: 24px;
   }
-
 }
 
+//TEXTOS
 
+.textsDocument {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
 
-.iconDocument {
-  height: 40px;
-  width: 40px;
-  // fill: $icon-color;
-}
+  .iconDocument {
+    height: 40px;
+    width: 40px;
+    margin-top: 5px;
+  }
 
-.textID {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 600;
-  width: 400px;
-  height: 24px;
-}
-
-.alertDocument {
-  height: 20px;
-  width: 295px;
-  border-radius: 4px;
-  background-color: $backgorund-alert-color;
-
-  .textAlertDocument {
-    width: 266px;
-    height: 17px;
-    font-size: 12px;
-    line-height: 13px;
-    color: $basic-color;
+  .textID {
+    font-size: 18px;
+    line-height: 24px;
     font-weight: 600;
-    padding-top: 4px;
+    width: 400px;
+    height: 24px;
+  }
+
+  .alertDocument {
+    height: 20px;
+    width: 295px;
+    border-radius: 4px;
+    background-color: $backgorund-alert-color;
+    padding-bottom: 5px;
+
+    .textAlertDocument {
+      width: 266px;
+      height: 17px;
+      font-size: 12px;
+      line-height: 1px;
+      color: $basic-color;
+      font-weight: 600;
+    }
+  }
+
+  .informationText {
+    height: 38px;
+    width: 345px;
   }
 }
 
-.textDocTitular {
-  font-weight: 600;
+.containerTextDocTit {
+  display: flex;
+  height: 24px;
+  width: 353px;
+  margin-bottom: 20px;
+
+  .textDocTitular {
+    font-weight: 600;
+  }
 }
 
-
-
+//TEXTO "TIPO DE DOCUMENTO"
+.containerTextTipoDoc {
+  display: flex;
+  height: 24px;
+  width: 353px;
+  margin-bottom: 20px;
+  .textTipoDoc {
+    font-weight: 600;
+  }
+}
 
 //NUMERO DE DOCUMENTO
 
-.textNumDoc{
+.containerTextNumDoc {
+  display: flex;
+  height: 24px;
+  width: 353px;
+  margin-bottom: 20px;
+  .textNumDoc {
     font-weight: 600;
+  }
 }
 
-.buttonAddDoc{
-    color: $basic-color;
-    background-color: $button-color;
-    border: none;
-    height: 48px;
-    width: 347px;
-    border-radius: 24.5px;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.inputNumID{
-    border: 1px solid $border-box-color;
-    border-radius: 4px;
-    height: 48px;
-    width: 346px;
+//INPUT
+.inputNumID {
+  border: 1px solid $border-box-color;
+  border-radius: 4px;
+  height: 48px;
+  width: 326px;
+  padding: 0px 20px 0px 20px;
 }
 
 //BOTON
 
+.buttonAddDoc {
+  color: $basic-color;
+  background-color: $button-color;
+  border: none;
+  height: 48px;
+  width: 347px;
+  border-radius: 24.5px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 25px;
+}

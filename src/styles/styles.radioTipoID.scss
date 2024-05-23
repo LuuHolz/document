@@ -48,16 +48,39 @@
   transform: scale(1);
 }
 
+
+
+//
+
 .principalContainerRadioID{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-}
+    
+    .textTipoPasaporte{
+      font-size: 14px;
+    }
 
-.containerRadioID{
+    .containerRadioID{
+      border: 1px solid $border-box-color;
+      height: 47px;
+      width: 102px;
+      border-radius: 4px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .containerRadioIDPasaporte{
     border: 1px solid $border-box-color;
     height: 47px;
-    width: 112px;
+    width: 126px;
     border-radius: 4px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
+

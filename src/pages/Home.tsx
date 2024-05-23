@@ -14,34 +14,36 @@ const Home = () => {
         <img src={Cerrar} alt="cerrar" className="iconCerrar" />
       </div>
 
-      <div className="textID">Documento del responsable de la adopcion</div>
+      <div className="textsDocument">
+        <p className="textID">Documento del responsable de la adopcion</p>
 
-      <div className="alertDocument">
-        <p className="textAlertDocument">DEBES AÑADIR UN DOCUMENTO</p>
-      </div>
+        <div className="alertDocument">
+          <p className="textAlertDocument">DEBES AÑADIR UN DOCUMENTO</p>
+        </div>
 
-      <div>
         <img src={Document} alt="document" className="iconDocument" />
-      </div>
 
-      <div>
-        <p>
+        <p className="informationText">
           Para iniciar la pre-adopcion, es necesario{" "}
           <strong>tener registrado un documento de identificacion.</strong>
         </p>
       </div>
 
-      <div>
+      <div className="containerTextDocTit">
         <p className="textDocTitular">Titutlar del documento</p>
       </div>
 
       <RadioAdopto />
 
-      <p>Tipo de documento</p>
+      <div className="containerTextTipoDoc">
+        <p className="textTipoDoc">Tipo de documento</p>
+      </div>
       <RadioID />
 
-      <p className="textNumDoc">Indica el numero del documento</p>
-      <input type="number" className="inputNumID"/>
+      <div className="containerTextNumDoc">
+        <p className="textNumDoc">Indica el numero del documento</p>
+      </div>
+      <input type="text" className="inputNumID" />
 
       <button className="buttonAddDoc">Añadir documento</button>
     </div>
