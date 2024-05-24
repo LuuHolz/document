@@ -17,24 +17,27 @@ const Home = () => {
   const [btnDisabled, setBtnDisabled] = useState({ error: "", status: false });
 
   const handleDocumentoChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputDocumento(e.target.value);
-    const resultado = validaDocumento(tipoDocumento, inputDocumento);
+    const valueInputActualizado = e.target.value;
+    setInputDocumento(valueInputActualizado);
+    const resultado = validaDocumento(tipoDocumento, valueInputActualizado);
 
-    if (resultado.resultado) setBtnDisabled({ error: "", status: true });
-    else if (!resultado.resultado)
+    if (resultado.resultado) {
+      setBtnDisabled({ error: "", status: true });
+    } else if (!resultado.resultado) {
       setBtnDisabled({ error: resultado.error, status: false });
-
-    console.log(resultado);
+    } else if (valueInputActualizado === ""){
+      setBtnDisabled({ error: "", status: false });
+      return;
+    }
+    
   };
 
   const handleTipoDocumentoChange = (numero: number) => {
     setTipoDocumento(numero);
-    console.log(setInputDocumento);
   };
 
   const handleTipoTitularChange = (valor: string) => {
     setTipoTitular(valor);
-    console.log(setTipoTitular);
   };
 
   return (
