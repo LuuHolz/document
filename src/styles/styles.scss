@@ -130,6 +130,11 @@
   padding: 0px 20px 0px 20px;
 }
 
+input[type="text"]:focus{
+  outline: none;
+  border: 1px solid $border-box-color;
+}
+
 //BOTON
 
 .buttonAddDoc {
