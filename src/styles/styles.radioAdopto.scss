@@ -1,31 +1,43 @@
 //INPUTS
-.iconAdopto {
-  width: 42px;
-  height: 42px;
-}
+
 .containerRadioDoc {
   display: flex;
   align-items: center;
+
+  .iconAdopto {
+    width: 42px;
+    height: 42px;
+  }
+
+  .radioLabel {
+    display: inline-block;
+  
+    height: 96px;
+    width: 170px;
+    border: 1px solid $border-box-color;
+    border-radius: 4px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .radioLabel p {
+    margin-top: 5px;
+    font-weight: normal;
+    font-size: 14px;
+  }
+  
 }
 
-.radioLabel {
-  display: inline-block;
 
-  height: 96px;
-  width: 170px;
-  border: 1px solid $border-box-color;
-  border-radius: 4px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  margin: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.radioLabel p {
-  margin-top: 5px;
-  font-weight: normal;
-  font-size: 14px;
+input[type="radio"] {
+  &:checked + label {
+    border: solid 3px #ad88c6;
+    background: #fff;
+    transition: transform 0.5s;
+  }
 }

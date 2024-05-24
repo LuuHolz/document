@@ -23,8 +23,8 @@ export const documentos: Documento[] = [
 export const titulares: Titular[]= [
     {
         imagen: AdoptoParaMi,
-        text: "Adopto para mi",
-        key: "Adopto para mi",
+        text: "Adopto para mí",
+        key: "Adopto para mí",
         valor: "Duenio principal"
     },
     {

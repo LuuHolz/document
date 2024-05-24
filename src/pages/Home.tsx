@@ -64,34 +64,38 @@ const Home = () => {
         <p className="textDocTitular">Titutlar del documento</p>
       </div>
 
-      {titulares.map((titular: Titular) => {
-        return (
-          <RadioAdopto
-            imagen={titular.imagen}
-            text={titular.text}
-            key={titular.key}
-            handleTipoTitularChange={() =>
-              handleTipoTitularChange(titular.valor)
-            }
-          />
-        );
-      })}
+      <div className="containerTitulares">
+        {titulares.map((titular: Titular) => {
+          return (
+            <RadioAdopto
+              imagen={titular.imagen}
+              text={titular.text}
+              key={titular.key}
+              handleTipoTitularChange={() =>
+                handleTipoTitularChange(titular.valor)
+              }
+            />
+          );
+        })}
+      </div>
 
       <div className="containerTextTipoDoc">
         <p className="textTipoDoc">Tipo de documento</p>
       </div>
 
-      {documentos.map((documento: Documento) => {
-        return (
-          <RadioID
-            handleTipoDocumentoChange={() =>
-              handleTipoDocumentoChange(documento.valor)
-            }
-            texto={documento.text}
-            key={documento.key}
-          />
-        );
-      })}
+      <div className="containerDocumentos">
+        {documentos.map((documento: Documento) => {
+          return (
+            <RadioID
+              handleTipoDocumentoChange={() =>
+                handleTipoDocumentoChange(documento.valor)
+              }
+              texto={documento.text}
+              key={documento.key}
+            />
+          );
+        })}
+      </div>
 
       <div className="containerTextNumDoc">
         <p className="textNumDoc">Indica el número del documento</p>
@@ -104,7 +108,7 @@ const Home = () => {
         value={inputDocumento}
         disabled={tipoDocumento === 0}
       />
-      {!btnDisabled.status && <p>{btnDisabled.error}</p>}
+      {!btnDisabled.status && <p className="inputError">{btnDisabled.error}</p>}
 
       <button className="buttonAddDoc" disabled={!btnDisabled.status}>
         Añadir documento

@@ -1,20 +1,24 @@
-
 //
+
+.containerDocumentos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
 
 .principalContainerRadioID {
   display: flex;
   align-items: center;
-  justify-content:center;
-  width: 400px;
- 
-}
+  height: 47px;
+  width: 126px;
 
   .textTipoDoc {
     font-size: 14px;
     color: $text-color;
   }
 
-  .labelButton{
+  .labelButton {
     border: 1px solid $border-box-color;
     height: 47px;
     width: 102px;
@@ -23,39 +27,35 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
   }
 
   input[type="radio"] {
-
     &:checked + label {
-      border: solid 3px #AD88C6;
-      background: #FFF;
-      transition: transform .5s;
+      border: solid 3px #ad88c6;
+      background: #fff;
+      transition: transform 0.5s;
     }
   }
+}
 
-  // .containerRadioID {
-  //   border: 1px solid $border-box-color;
-  //   height: 47px;
-  //   width: 102px;
-  //   border-radius: 4px;
-  //   margin: 5px;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  // }
+// .containerRadioID {
+//   border: 1px solid $border-box-color;
+//   height: 47px;
+//   width: 102px;
+//   border-radius: 4px;
+//   margin: 5px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
 
-  // .containerRadioIDPasaporte {
-  //   border: 1px solid $border-box-color;
-  //   height: 47px;
-  //   width: 126px;
-  //   border-radius: 4px;
-  //   margin: 5px;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  // }
-
-
-
+// .containerRadioIDPasaporte {
+//   border: 1px solid $border-box-color;
+//   height: 47px;
+//   width: 126px;
+//   border-radius: 4px;
+//   margin: 5px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }

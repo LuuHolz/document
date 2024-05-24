@@ -16,7 +16,7 @@ const radioTipoID = ({ handleTipoDocumentoChange, texto }: Props) => {
         <p className="textTipoDoc">{texto}</p>
       </label>
     </div>
-  ); 
+  );
 };
 
 export default radioTipoID;

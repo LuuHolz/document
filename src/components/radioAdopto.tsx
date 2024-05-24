@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 type Props = {
   handleTipoTitularChange: () => void;
   imagen: string;
@@ -9,15 +7,15 @@ type Props = {
 const radioAdopto = ({ handleTipoTitularChange, imagen, text }: Props) => {
   return (
     <div className="containerRadioDoc">
-      <label htmlFor="paraMi" className="radioLabel">
+            <input
+        type="radio"
+        id="radio1"
+        name="adoptionType"
+        onChange={handleTipoTitularChange}
+      />
+      <label htmlFor="radio1" className="radioLabel">
         <img src={imagen} alt="AdoptoParaMi" className="iconAdopto" />
         <p>{text}</p>
-        <input
-          type="radio"
-          id="paraMi"
-          name="adoptionType"
-          onChange={handleTipoTitularChange}
-        />
       </label>
     </div>
   );
