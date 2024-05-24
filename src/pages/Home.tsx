@@ -9,12 +9,14 @@ import { validaDocumento } from "../utils/utils";
 import { documentos } from "../utils/constants";
 import { Documento, Titular } from "../models/constants.type";
 import { titulares } from "../utils/constants";
+import ModalPasaporte from "../components/modalPasaporte"
 
 const Home = () => {
   const [inputDocumento, setInputDocumento] = useState("");
   const [tipoDocumento, setTipoDocumento] = useState(0);
   const [tipoTitular, setTipoTitular] = useState("");
   const [btnDisabled, setBtnDisabled] = useState({ error: "", status: false });
+  const [showModal, setShowModal] = useState(false);
 
   const handleDocumentoChange = (e: ChangeEvent<HTMLInputElement>) => {
     const valueInputActualizado = e.target.value;
@@ -28,6 +30,12 @@ const Home = () => {
     } else if (valueInputActualizado === ""){
       setBtnDisabled({ error: "", status: false });
       return;
+    } 
+    
+    if (tipoDocumento === 5 && valueInputActualizado === "444"){
+      setShowModal(true);
+    } else {
+      setShowModal(false);
     }
     
   };
@@ -40,6 +48,8 @@ const Home = () => {
     setTipoTitular(valor);
   };
 
+  const handleCloseModal = () => setShowModal(false);
+
   return (
     <div className="homeContainer">
       <div className="topIcons">
@@ -51,9 +61,12 @@ const Home = () => {
       <div className="textsDocument">
         <p className="textID">Documento del responsable de la adopción</p>
 
-        <div className="alertDocument">
+<div className="alertContainer">
+<div className="alertDocument">
           <p className="textAlertDocument">DEBES AÑADIR UN DOCUMENTO</p>
         </div>
+</div>
+
 
         <img src={Document} alt="document" className="iconDocument" />
 
@@ -112,6 +125,8 @@ const Home = () => {
         disabled={tipoDocumento === 0}
       />
       {!btnDisabled.status && <p className="inputError">{btnDisabled.error}</p>}
+
+       <ModalPasaporte show={showModal} handleClose={handleCloseModal}/>
 
       <button className="buttonAddDoc" disabled={!btnDisabled.status}>
         Añadir documento
