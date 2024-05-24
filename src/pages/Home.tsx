@@ -5,31 +5,37 @@ import Cerrar from "../assets/close.svg";
 import Atras from "../assets/back.svg";
 import RadioAdopto from "../components/radioAdopto";
 import RadioID from "../components/radioTipoID";
-import {validaDocumento} from "../utils/utils";
+import { validaDocumento } from "../utils/utils";
+import { documentos } from "../utils/constants";
+import { Documento, Titular } from "../models/constants.type";
+import { titulares } from "../utils/constants";
 
 const Home = () => {
-  const [seleccionado, setseleccionado] = useState(false);
   const [inputDocumento, setInputDocumento] = useState("");
   const [tipoDocumento, setTipoDocumento] = useState(0);
-  const [btnDisabled, setBtnDisabled] = useState({ error: '', status: false})
+  const [tipoTitular, setTipoTitular] = useState("");
+  const [btnDisabled, setBtnDisabled] = useState({ error: "", status: false });
 
   const handleDocumentoChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputDocumento(e.target.value)
-    const resultado = validaDocumento(tipoDocumento, inputDocumento)
+    setInputDocumento(e.target.value);
+    const resultado = validaDocumento(tipoDocumento, inputDocumento);
 
-    if(resultado.resultado) setBtnDisabled({ error: '', status: true})
-    else if(!resultado.resultado) setBtnDisabled({ error: resultado.error , status: false})
+    if (resultado.resultado) setBtnDisabled({ error: "", status: true });
+    else if (!resultado.resultado)
+      setBtnDisabled({ error: resultado.error, status: false });
 
-    console.log(resultado)
-
-
+    console.log(resultado);
   };
 
-  
   const handleTipoDocumentoChange = (numero: number) => {
-    setTipoDocumento(numero)
-  }
+    setTipoDocumento(numero);
+    console.log(setInputDocumento);
+  };
 
+  const handleTipoTitularChange = (valor: string) => {
+    setTipoTitular(valor);
+    console.log(setTipoTitular);
+  };
 
   return (
     <div className="homeContainer">
@@ -40,7 +46,7 @@ const Home = () => {
       </div>
 
       <div className="textsDocument">
-        <p className="textID">Documento del responsable de la adopcion</p>
+        <p className="textID">Documento del responsable de la adopción</p>
 
         <div className="alertDocument">
           <p className="textAlertDocument">DEBES AÑADIR UN DOCUMENTO</p>
@@ -49,8 +55,8 @@ const Home = () => {
         <img src={Document} alt="document" className="iconDocument" />
 
         <p className="informationText">
-          Para iniciar la pre-adopcion, es necesario{" "}
-          <strong>tener registrado un documento de identificacion.</strong>
+          Para iniciar la pre-adopción, es necesario{" "}
+          <strong>tener registrado un documento de identificación.</strong>
         </p>
       </div>
 
@@ -58,16 +64,37 @@ const Home = () => {
         <p className="textDocTitular">Titutlar del documento</p>
       </div>
 
-      <RadioAdopto />
+      {titulares.map((titular: Titular) => {
+        return (
+          <RadioAdopto
+            imagen={titular.imagen}
+            text={titular.text}
+            key={titular.key}
+            handleTipoTitularChange={() =>
+              handleTipoTitularChange(titular.valor)
+            }
+          />
+        );
+      })}
 
       <div className="containerTextTipoDoc">
         <p className="textTipoDoc">Tipo de documento</p>
       </div>
 
-      <RadioID handleTipoDocumentoChange={handleTipoDocumentoChange}/>
+      {documentos.map((documento: Documento) => {
+        return (
+          <RadioID
+            handleTipoDocumentoChange={() =>
+              handleTipoDocumentoChange(documento.valor)
+            }
+            texto={documento.text}
+            key={documento.key}
+          />
+        );
+      })}
 
       <div className="containerTextNumDoc">
-        <p className="textNumDoc">Indica el numero del documento</p>
+        <p className="textNumDoc">Indica el número del documento</p>
       </div>
 
       <input
@@ -77,15 +104,9 @@ const Home = () => {
         value={inputDocumento}
         disabled={tipoDocumento === 0}
       />
-      {
-        !btnDisabled.status && <p>{btnDisabled.error}</p>
-      }
+      {!btnDisabled.status && <p>{btnDisabled.error}</p>}
 
-      <button
-        className="buttonAddDoc"
-        onClick={() => buttonAdd()}
-        disabled={seleccionado || !btnDisabled.status}
-      >
+      <button className="buttonAddDoc" disabled={!btnDisabled.status}>
         Añadir documento
       </button>
     </div>

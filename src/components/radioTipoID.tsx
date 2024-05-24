@@ -1,31 +1,22 @@
-import { useState } from "react";
-
 type Props = {
-  handleTipoDocumentoChange: (numero: number) => void;
+  handleTipoDocumentoChange: () => void;
+  texto: string;
 };
 
-const radioTipoID = ({handleTipoDocumentoChange}: Props) => {
-
-
-
+const radioTipoID = ({ handleTipoDocumentoChange, texto }: Props) => {
   return (
-    <form action="#" className="principalContainerRadioID">
-      <div className="containerRadioID">
-          <input type="radio" id="test1" name="radio-group" onChange={()=> handleTipoDocumentoChange(1)} />
-          <label htmlFor="test1" className="textTipoPasaporte">DNI</label>
-      </div>
-
-      <div className="containerRadioID">
-          <input type="radio" id="test2" name="radio-group" onChange={(e)=> handleTipoDocumentoChange(2)} />
-          <label htmlFor="test2" className="textTipoPasaporte">NIE</label>
-      </div>
-
-      <div className="containerRadioIDPasaporte">
-          <input type="radio" id="test3" name="radio-group" onChange={(e)=> handleTipoDocumentoChange(5)} />
-          <label htmlFor="test3" className="textTipoPasaporte">Pasaporte</label>
-      </div>
-    </form>
-  );
+    <div className="principalContainerRadioID">
+      <input
+        type="radio"
+        id="test1"
+        name="radio-group"
+        onChange={handleTipoDocumentoChange}
+      />
+      <label htmlFor="test1" className="labelButton">
+        <p className="textTipoDoc">{texto}</p>
+      </label>
+    </div>
+  ); 
 };
 
 export default radioTipoID;
