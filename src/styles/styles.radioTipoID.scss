@@ -13,10 +13,7 @@
   height: 47px;
   width: 126px;
 
-  .textTipoDoc {
-    font-size: 14px;
-    color: $text-color;
-  }
+
 
   .labelButton {
     border: 1px solid $border-box-color;
@@ -27,6 +24,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .textTipoDoc {
+      font-size: 14px;
+      color: $text-color;
+      padding-top: 15px;
+    }
   }
 
   input[type="radio"] {
@@ -38,24 +41,3 @@
   }
 }
 
-// .containerRadioID {
-//   border: 1px solid $border-box-color;
-//   height: 47px;
-//   width: 102px;
-//   border-radius: 4px;
-//   margin: 5px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
-
-// .containerRadioIDPasaporte {
-//   border: 1px solid $border-box-color;
-//   height: 47px;
-//   width: 126px;
-//   border-radius: 4px;
-//   margin: 5px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }

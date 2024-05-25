@@ -7,7 +7,7 @@ type Props = {
 const radioAdopto = ({ handleTipoTitularChange, imagen, text }: Props) => {
   return (
     <div className="containerRadioDoc">
-            <input
+      <input
         type="radio"
         id="radio1"
         name="adoptionType"
@@ -15,7 +15,7 @@ const radioAdopto = ({ handleTipoTitularChange, imagen, text }: Props) => {
       />
       <label htmlFor="radio1" className="radioLabel">
         <img src={imagen} alt="AdoptoParaMi" className="iconAdopto" />
-        <p>{text}</p>
+        <p className="textRadioLabel">{text}</p>
       </label>
     </div>
   );

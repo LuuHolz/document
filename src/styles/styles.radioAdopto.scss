@@ -4,14 +4,10 @@
   display: flex;
   align-items: center;
 
-  .iconAdopto {
-    width: 42px;
-    height: 42px;
-  }
+
 
   .radioLabel {
     display: inline-block;
-  
     height: 96px;
     width: 170px;
     border: 1px solid $border-box-color;
@@ -23,16 +19,20 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-  }
-  
-  .radioLabel p {
-    margin-top: 5px;
-    font-weight: normal;
-    font-size: 14px;
+
+    .iconAdopto {
+      width: 42px;
+      height: 42px;
+    }
+
+    .textRadioLabel {
+      margin-top: 5px;
+      font-weight: normal;
+      font-size: 14px;
+    }
   }
   
 }
-
 
 input[type="radio"] {
   &:checked + label {
