@@ -9,7 +9,7 @@ import { validaDocumento } from "../utils/utils";
 import { documentos } from "../utils/constants";
 import { Documento, Titular } from "../models/constants.type";
 import { titulares } from "../utils/constants";
-import ModalPasaporte from "../components/modalPasaporte"
+import ModalPasaporte from "../components/modalPasaporte";
 
 const Home = () => {
   const [inputDocumento, setInputDocumento] = useState("");
@@ -27,17 +27,17 @@ const Home = () => {
       setBtnDisabled({ error: "", status: true });
     } else if (!resultado.resultado) {
       setBtnDisabled({ error: resultado.error, status: false });
-    } else if (valueInputActualizado === ""){
+    } else if (valueInputActualizado === "") {
       setBtnDisabled({ error: "", status: false });
       return;
-    } 
-    
-    if (tipoDocumento === 5 && valueInputActualizado === "444"){
+    }
+
+    const valueNumeros = /^[0-9]{5}$/;
+    if (tipoDocumento === 5 && valueNumeros.test(valueInputActualizado)) {
       setShowModal(true);
     } else {
       setShowModal(false);
     }
-    
   };
 
   const handleTipoDocumentoChange = (numero: number) => {
@@ -61,12 +61,11 @@ const Home = () => {
       <div className="textsDocument">
         <p className="textID">Documento del responsable de la adopción</p>
 
-<div className="alertContainer">
-<div className="alertDocument">
-          <p className="textAlertDocument">DEBES AÑADIR UN DOCUMENTO</p>
+        <div className="alertContainer">
+          <div className="alertDocument">
+            <p className="textAlertDocument">DEBES AÑADIR UN DOCUMENTO</p>
+          </div>
         </div>
-</div>
-
 
         <img src={Document} alt="document" className="iconDocument" />
 
@@ -126,7 +125,7 @@ const Home = () => {
       />
       {!btnDisabled.status && <p className="inputError">{btnDisabled.error}</p>}
 
-       <ModalPasaporte show={showModal} handleClose={handleCloseModal}/>
+      <ModalPasaporte show={showModal} handleClose={handleCloseModal} />
 
       <button className="buttonAddDoc" disabled={!btnDisabled.status}>
         Añadir documento
